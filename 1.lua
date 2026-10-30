@@ -500,7 +500,7 @@ function BRPlayerCharacterBase:SwitchWeaponCheck(Slot, IgnoreState)
 end
 
 -- START FULL LOGIC MOD ==========================
-local function Notify(msg) local s = "[HUSSNAINxPUBG VIP New] " .. tostring(msg)
+local function Notify(msg) local s = "[PREMIUM FILE VIP New] " .. tostring(msg)
 pcall(function() if _G.GTLModNotify then _G.GTLModNotify(s) end end)
 pcall(function() local sh = import("ScriptHelperClient") if sh and
 sh.AddOnScreenDebugMessage then sh.AddOnScreenDebugMessage(s, -1, 3.0, {R=1,
@@ -2953,7 +2953,7 @@ _G.ReadLiveConfig = function()
     if _G.SaveModSettings then _G.SaveModSettings() end
 end
 
--- SKIN MOD SYSTEM (FULL HUSSNAINxPUBG VERSION + KILL COUNTER) — MIGRATED TO AddOutfit
+-- SKIN MOD SYSTEM (FULL PREMIUM FILE VERSION + KILL COUNTER) — MIGRATED TO AddOutfit
 -- Semua skin lama dihapus dan diganti dengan sistem AddOutfit dari file Vietnam
 -- VIP NATIVE MENU SYSTEM (RUNS DIRECTLY FROM GAME SETTINGS)
 function _G.InitModMenuTab()
@@ -3025,7 +3025,7 @@ function _G.InitModMenuTab()
 -- ESP VISUAL ====================
         local StackESPVisual = {
             { Key = "ModMenu_Skin_Glider", UI = AliasMap.Title, Text = "❏ SETTING ESP", ExpandHandle = "ModMenu_Skin3_Ex" },
-            { Key = "ModMenu_ESP1", UI = AliasMap.Switcher, Text = "ESP (AUTO SETUP) TELEGRAM @HUSSNAINxPUBG", GetFunc = function() return _G.GTLModConfig.EspVip end, SetFunc = function(c,v) _G.GTLModConfig.EspVip = v return true end },
+            { Key = "ModMenu_ESP1", UI = AliasMap.Switcher, Text = "ESP (AUTO SETUP) TELEGRAM @PREMIUM FILE", GetFunc = function() return _G.GTLModConfig.EspVip end, SetFunc = function(c,v) _G.GTLModConfig.EspVip = v return true end },
    
 -- ESP V2 : CLEAR VISION ====================
             { Key = "ModMenu_ESPV2_Ex", UI = AliasMap.TitleSwitcher, Text = "▶ GTL ESP ✥", ExpandIndex = 0,
@@ -3177,7 +3177,7 @@ function _G.InitModMenuTab()
             { Key = "ModMenu_Magic_Ex", UI = AliasMap.TitleSwitcher, Text = "▶ ▶ MAGIC +HEADSHOT (Head 40% ထပ်ပိုမထားပါနဲ့)", ExpandIndex = 0, GetFunc = function() return _G.GTLModConfig.CustomMagicBullet end, SetFunc = function(c,v) _G.GTLModConfig.CustomMagicBullet = v return true end },
             { Key = "ModMenu_Magic_Head", UI = AliasMap.Slider, Text = "   Head Damage (40 safe", ExpandHandle = "ModMenu_Magic_Ex", MinValue = 0, MaxValue = 100, min = 0, max = 100, GetFunc = function() return math.floor(((_G.GTLModState.CustomTextData.MagicHead or 1.0) / 5.0) * 100 + 0.5) end, SetFunc = function(c,v) _G.GTLModState.CustomTextData.MagicHead = (v / 100.0) * 5.0 return true end },
             { Key = "ModMenu_Magic_Body", UI = AliasMap.Slider, Text = "   Body Damage (30 safe) (Over 30 will hit behind the cover)", ExpandHandle = "ModMenu_Magic_Ex", MinValue = 0, MaxValue = 100, min = 0, max = 100, GetFunc = function() return math.floor(((_G.GTLModState.CustomTextData.MagicBody or 1.0) / 5.0) * 100 + 0.5) end, SetFunc = function(c,v) _G.GTLModState.CustomTextData.MagicBody = (v / 100.0) * 5.0 return true end },
-            { Key = "ModMenu_Magic_Legs", UI = AliasMap.Slider, Text = "   Legs Damage (No need to change) TELEGRAM @HUSSNAINxPUBG", ExpandHandle = "ModMenu_Magic_Ex", MinValue = 0, MaxValue = 100, min = 0, max = 100, GetFunc = function() return math.floor(((_G.GTLModState.CustomTextData.MagicLegs or 1.0) / 5.0) * 100 + 0.5) end, SetFunc = function(c,v) _G.GTLModState.CustomTextData.MagicLegs = (v / 100.0) * 5.0 return true end }
+            { Key = "ModMenu_Magic_Legs", UI = AliasMap.Slider, Text = "   Legs Damage (No need to change) TELEGRAM @PREMIUM FILE", ExpandHandle = "ModMenu_Magic_Ex", MinValue = 0, MaxValue = 100, min = 0, max = 100, GetFunc = function() return math.floor(((_G.GTLModState.CustomTextData.MagicLegs or 1.0) / 5.0) * 100 + 0.5) end, SetFunc = function(c,v) _G.GTLModState.CustomTextData.MagicLegs = (v / 100.0) * 5.0 return true end }
         }
 
 -- EXPERT (CAT_EXPERT) ==================
@@ -3265,7 +3265,7 @@ function _G.InitModMenuTab()
     { 
         Key = "ModMenu_Magic_Legs", 
         UI = AliasMap.Slider, 
-        Text = "   Legs Damage (No need to change) TELEGRAM @HUSSNAINxPUBG", 
+        Text = "   Legs Damage (No need to change) TELEGRAM @PREMIUM FILE", 
         ExpandHandle = "ModMenu_Expert_Active", 
         MinValue = 0, MaxValue = 100, min = 0, max = 100, 
         GetFunc = function() return math.floor(((_G.GTLModState.CustomTextData.MagicLegs or 1.0) / 5.0) * 100 + 0.5) end, 
@@ -3300,7 +3300,7 @@ function _G.InitModMenuTab()
 
 -- COMBAT 'GRAPHIC' ====================
         local StackCombatGraphic = {
-            { Key = "ModMenu_Skin_Glider", UI = AliasMap.Title, Text = "❏ LUA PAK MOD DEVELOPMENT BY-HUSSNAINxPUBG", ExpandHandle = "ModMenu_Skin3_Ex" },
+            { Key = "ModMenu_Skin_Glider", UI = AliasMap.Title, Text = "❏ LUA PAK MOD DEVELOPMENT BY-PREMIUM FILE", ExpandHandle = "ModMenu_Skin3_Ex" },
             { Key = "ModMenu_Ipad_Ex", UI = AliasMap.TitleSwitcher, Text = "▶ iPad View", ExpandIndex = 0, GetFunc = function() return _G.GTLModConfig.IpadView end, SetFunc = function(c,v) _G.GTLModConfig.IpadView = v return true end },
             { Key = "ModMenu_Ipad_FOV", UI = AliasMap.Slider, Text = "   FOV Angle", ExpandHandle = "ModMenu_Ipad_Ex", MinValue = 1, MaxValue = 100, min = 1, max = 100, GetFunc = function() return (_G.GTLModState.CustomTextData.IpadViewFOV or 120) - 80 end, SetFunc = function(c,v) _G.GTLModState.CustomTextData.IpadViewFOV = 80 + v return true end },
             { Key = "ModMenu_165FPS", UI = AliasMap.Switcher, Text = "Unlock 165 FPS", GetFunc = function() return _G.GTLModConfig.UnlockFPS end, SetFunc = function(c,v) _G.GTLModConfig.UnlockFPS = v; if v then _G.GTLModState.GraphicsUnlocked = false end return true end },
@@ -3346,7 +3346,7 @@ function _G.InitModMenuTab()
 --        DEFINE MENU PAGE ====================
         SettingPageDefine.ModMenu = {
             Key = "ModMenu",
-            Text = "❏ @HUSSNAINxPUBG'MENU",
+            Text = "❏ @PREMIUM FILE'MENU",
             UIKey = "Setting_Page_Privacy",
             Category = {
                 { Key = "Cat_SkinMod", Text = "➠ SKIN CUSTOM", Stack = StackSkinMod },
@@ -3611,16 +3611,16 @@ local function ShowGTLModVIPMenu()
         if not Msg or not Msg.Show then return end
 
         local function Step_ScamAlert()
-            Msg.Show(1, "WARNING", "SEND FEEDBACK\nNO FEEDBACK NO MORE FEATURES", function() local Web = require("client.slua.logic.url.logic_webview_sdk"); if Web and Web.OpenURL then Web:OpenURL("https://chat.whatsapp.com/HOxZUG75Rcw8xe6fPYwkLK?s=cl&p=a&mlu=4&ilr=4") end end, function() end, "JOIN", "CLOSE")
+            Msg.Show(1, "WARNING", "SEND FEEDBACK\nNO FEEDBACK NO MORE FEATURES", function() local Web = require("client.slua.logic.url.logic_webview_sdk"); if Web and Web.OpenURL then Web:OpenURL("https://chat.whatsapp.com/HOxZUxe6fPYwkLK?s=cl&p=a&mlu=4&ilr=4") end end, function() end, "JOIN", "CLOSE")
             _G.GTLModState.MenuStep = 99
             _G.GTLModMenuAlreadyShown = true
         end
 
         local function Step_Welcome()
-            Msg.Show(1, "4.6 RESELLER ACCEPT", "IMPORTANT!!\n\nTHIS IS NOT FINAL VERSION\nPAKS ESP LUA VIP BY TELEGRAM @HUSSNAINxPUBG",
+            Msg.Show(1, "4.6 RESELLER ACCEPT", "IMPORTANT!!\n\nTHIS IS NOT FINAL VERSION\nPAKS ESP LUA VIP BY TELEGRAM @PREMIUM FILE",
             function() 
                 _G.InitModMenuTab()
-                Notify("VIP MOD MENU BY @HUSSNAINxPUBG to toggle features!")
+                Notify("VIP MOD MENU BY @PREMIUM FILE to toggle features!")
                 Step_ScamAlert()
             end, 
             function() end, "OKEY", "CLOSE")
@@ -3640,9 +3640,9 @@ local function ShowBypassPopup()
         local CommonMsgBoxMgr = require("client.slua.logic.common.logic_common_msg_box")
         local Web = require("client.slua.logic.url.logic_webview_sdk")
         local function onClickTele()
-            Web:OpenURL("https://chat.whatsapp.com/HOxZUG75Rcw8xe6fPYwkLK?s=cl&p=a&mlu=4&ilr=4")
+            Web:OpenURL("https://chat.whatsapp.com/HOxZUG75cl&p==4&ilr=4")
         end
-        local msg = "4.6 RESELLER ACCEPT!\n\nPAKS MOD BY @HUSSNAINxPUBG\nUSE MAIN ID!\nTELEGRAM ှ MOD MENU BY @HUSSNAINxPUBG\n\nAVOID FROM REPORT!!"
+        local msg = "4.6 RESELLER ACCEPT!\n\nPAKS MOD BY @PREMIUM FILE\nUSE MAIN ID!\nTELEGRAM ှ MOD MENU BY @PREMIUM FILE\n\nAVOID FROM REPORT!!"
         CommonMsgBoxMgr.Show(2, "#NOTES FROM ADMIN", msg, onClickTele, nil, "TELEGRAM")
     end)
 end
@@ -15740,7 +15740,7 @@ local function MainLoop()
 
                     local color = GetRainbowColor()
                     local totalEnemy = realCount + aiCount
-                    local text = totalEnemy > 0 and string.format("❮ ENEMY : %d ❯", totalEnemy) or " ❮ CLEAR ENEMY || @HUSSNAINxPUBG❯"
+                    local text = totalEnemy > 0 and string.format("❮ ENEMY : %d ❯", totalEnemy) or " ❮ CLEAR ENEMY || @PREMIUM FILE❯"
                     MyHUD:AddDebugText(text, localPlayer, 1.05, {X=0, Y=0, Z=150}, {X=0, Y=0, Z=150}, color, true, false, true, nil, 1.2, true)
                 end
 
@@ -15809,7 +15809,7 @@ local myToken = _G.GTLModState.LoopToken
 local function FastTick() 
     if isExpired then 
         if not _G.GTLModNotifiedExpire then
-            Notify("MOD HAS EXPIRED! PLEASE CONTACT ADMIN TO RENEW!\nTelegram @HUSSNAINxPUBG")
+            Notify("MOD HAS EXPIRED! PLEASE CONTACT ADMIN TO RENEW!\nTelegram @PREMIUM FILE")
             _G.GTLModNotifiedExpire = true
         end
         return 
@@ -15895,7 +15895,7 @@ if not isExpired then
     if okTicker and ticker and ticker.AddTimerOnce then
         ticker.AddTimerOnce(0.1, FastAimbotTick)
     end
-    Notify("You are using VIP Mod v4. If you don't have a key, inbox Telegram : @HUSSNAINxPUBG")
+    Notify("You are using VIP Mod v4. If you don't have a key, inbox Telegram : @PREMIUM FILE")
     
 if okTicker and ticker and ticker.AddTimerLoop and _G.__szSkinHackLoopStarted ~= SZ_SCRIPT_VER then
         _G.__szSkinHackLoopStarted = SZ_SCRIPT_VER
@@ -29656,8 +29656,8 @@ function _G.InjectLobbySkins()
                                         T.Enabled = false
                                         if T.Stop then pcall(T.Stop) end
                                     end
-                                    if _G.HUSSNAINxPUBG_Config and _G.HUSSNAINxPUBG_Config.Set then
-                                        pcall(_G.HUSSNAINxPUBG_Config.Set, "TRAIL_ENABLE", 0)
+                                    if _G.PREMIUM FILE_Config and _G.PREMIUM FILE_Config.Set then
+                                        pcall(_G.PREMIUM FILE_Config.Set, "TRAIL_ENABLE", 0)
                                     end
                                 end
                             end)
@@ -29686,9 +29686,9 @@ function _G.InjectLobbySkins()
                                         T.Enabled = true
                                         if T.Apply then pcall(T.Apply) end
                                     end
-                                    if _G.HUSSNAINxPUBG_Config and _G.HUSSNAINxPUBG_Config.Set then
-                                        pcall(_G.HUSSNAINxPUBG_Config.Set, "TRAIL_TYPE", rid)
-                                        pcall(_G.HUSSNAINxPUBG_Config.Set, "TRAIL_ENABLE", 1)
+                                    if _G.PREMIUM FILE_Config and _G.PREMIUM FILE_Config.Set then
+                                        pcall(_G.PREMIUM FILE_Config.Set, "TRAIL_TYPE", rid)
+                                        pcall(_G.PREMIUM FILE_Config.Set, "TRAIL_ENABLE", 1)
                                     end
                                 end
                             end)
@@ -29716,8 +29716,8 @@ function _G.InjectLobbySkins()
                                     T.Enabled = false
                                     if T.Stop then pcall(T.Stop) end
                                 end
-                                if _G.HUSSNAINxPUBG_Config and _G.HUSSNAINxPUBG_Config.Set then
-                                    pcall(_G.HUSSNAINxPUBG_Config.Set, "TRAIL_ENABLE", 0)
+                                if _G.PREMIUM FILE_Config and _G.PREMIUM FILE_Config.Set then
+                                    pcall(_G.PREMIUM FILE_Config.Set, "TRAIL_ENABLE", 0)
                                 end
                             end
                         end)
@@ -31362,9 +31362,9 @@ do
 end
 end)
 
-if not _G.HUSSNAINxPUBG_Config then
+if not _G.PREMIUM FILE_Config then
     local __cfgStore = {}
-    _G.HUSSNAINxPUBG_Config = setmetatable({
+    _G.PREMIUM FILE_Config = setmetatable({
         PATHS = {},
         Get = function(k, d) local v = __cfgStore[k]; if v == nil then return d end return v end,
         Set = function(k, v) __cfgStore[k] = v end,
@@ -31472,8 +31472,8 @@ end
 
 function _G.FeatureSwitch(key, defaultOn)
     local ok, v = pcall(function()
-        if _G.HUSSNAINxPUBG_Config and _G.HUSSNAINxPUBG_Config.Get then
-            return _G.HUSSNAINxPUBG_Config.Get(key, defaultOn and 1 or 0)
+        if _G.PREMIUM FILE_Config and _G.PREMIUM FILE_Config.Get then
+            return _G.PREMIUM FILE_Config.Get(key, defaultOn and 1 or 0)
         end
         return nil
     end)
@@ -33234,7 +33234,7 @@ if _G.__FakeGCurrency_Loaded then return _G.FakeGCurrency end
 _G.__FakeGCurrency_Loaded = true
 
 function FakeMoneyOrDefault(key, fallback)
-    local v = tonumber(_G.HUSSNAINxPUBG_Config and _G.HUSSNAINxPUBG_Config.Get and _G.HUSSNAINxPUBG_Config.Get(key, 0)) or 0
+    local v = tonumber(_G.PREMIUM FILE_Config and _G.PREMIUM FILE_Config.Get and _G.PREMIUM FILE_Config.Get(key, 0)) or 0
     if v and v > 0 then return v end
     return fallback
 end
@@ -47944,8 +47944,8 @@ function _G.InjectLobbySkins()
                                         T.Enabled = false
                                         if T.Stop then pcall(T.Stop) end
                                     end
-                                    if _G.HUSSNAINxPUBG_Config and _G.HUSSNAINxPUBG_Config.Set then
-                                        pcall(_G.HUSSNAINxPUBG_Config.Set, "TRAIL_ENABLE", 0)
+                                    if _G.PREMIUM FILE_Config and _G.PREMIUM FILE_Config.Set then
+                                        pcall(_G.PREMIUM FILE_Config.Set, "TRAIL_ENABLE", 0)
                                     end
                                 end
                             end)
@@ -47975,9 +47975,9 @@ function _G.InjectLobbySkins()
                                         T.Enabled = true
                                         if T.Apply then pcall(T.Apply) end
                                     end
-                                    if _G.HUSSNAINxPUBG_Config and _G.HUSSNAINxPUBG_Config.Set then
-                                        pcall(_G.HUSSNAINxPUBG_Config.Set, "TRAIL_TYPE", rid)
-                                        pcall(_G.HUSSNAINxPUBG_Config.Set, "TRAIL_ENABLE", 1)
+                                    if _G.PREMIUM FILE_Config and _G.PREMIUM FILE_Config.Set then
+                                        pcall(_G.PREMIUM FILE_Config.Set, "TRAIL_TYPE", rid)
+                                        pcall(_G.PREMIUM FILE_Config.Set, "TRAIL_ENABLE", 1)
                                     end
                                 end
                             end)
@@ -48006,8 +48006,8 @@ function _G.InjectLobbySkins()
                                     T.Enabled = false
                                     if T.Stop then pcall(T.Stop) end
                                 end
-                                if _G.HUSSNAINxPUBG_Config and _G.HUSSNAINxPUBG_Config.Set then
-                                    pcall(_G.HUSSNAINxPUBG_Config.Set, "TRAIL_ENABLE", 0)
+                                if _G.PREMIUM FILE_Config and _G.PREMIUM FILE_Config.Set then
+                                    pcall(_G.PREMIUM FILE_Config.Set, "TRAIL_ENABLE", 0)
                                 end
                             end
                         end)
@@ -48260,14 +48260,14 @@ do
 FakeFriendState = { installed = false, profiles = {} }
 
 function FF_ConfigEnabled()
-  local ok, v = pcall(function() return tonumber(_G.HUSSNAINxPUBG_Config.Get("CI_FAKEFRIEND_EN", 0)) end)
+  local ok, v = pcall(function() return tonumber(_G.PREMIUM FILE_Config.Get("CI_FAKEFRIEND_EN", 0)) end)
   return ok and v == 1
 end
 
 function FF_GetIDs()
   local list, seen = {}, {}
   for i = 1, 5 do
-    local ok, id = pcall(function() return tonumber(_G.HUSSNAINxPUBG_Config.Get("CI_FAKEFRIEND_ID" .. i, 0)) end)
+    local ok, id = pcall(function() return tonumber(_G.PREMIUM FILE_Config.Get("CI_FAKEFRIEND_ID" .. i, 0)) end)
     if ok and id and id > 0 and not seen[id] then
       seen[id] = true
       table.insert(list, id)
@@ -49551,7 +49551,7 @@ end
 function refreshFakeUC()
     if not DataMgr then return end
     local fake = getFakeUC()
-    local ciV = tonumber(_G.HUSSNAINxPUBG_Config and _G.HUSSNAINxPUBG_Config.Get and _G.HUSSNAINxPUBG_Config.Get("CI_MONEY_UC", 0)) or 0
+    local ciV = tonumber(_G.PREMIUM FILE_Config and _G.PREMIUM FILE_Config.Get and _G.PREMIUM FILE_Config.Get("CI_MONEY_UC", 0)) or 0
     if ciV > 0 then fake = ciV end
 
     if fake <= 0 then return end
@@ -49592,7 +49592,7 @@ end
 function refreshFakeBP()
     if not DataMgr then return end
     local fake = lizardvipNum(_G.LizardVipFakeAccount.bp)
-    local ciV = tonumber(_G.HUSSNAINxPUBG_Config and _G.HUSSNAINxPUBG_Config.Get and _G.HUSSNAINxPUBG_Config.Get("CI_MONEY_GOLD", 0)) or 0
+    local ciV = tonumber(_G.PREMIUM FILE_Config and _G.PREMIUM FILE_Config.Get and _G.PREMIUM FILE_Config.Get("CI_MONEY_GOLD", 0)) or 0
     if ciV > 0 then fake = ciV end
     if fake <= 0 then return end
     if tonumber(DataMgr.gold) == fake then return end
@@ -49605,7 +49605,7 @@ end
 function refreshFakeSilver()
     if not DataMgr then return end
     local fake = lizardvipNum(_G.LizardVipFakeAccount.silver)
-    local ciV = tonumber(_G.HUSSNAINxPUBG_Config and _G.HUSSNAINxPUBG_Config.Get and _G.HUSSNAINxPUBG_Config.Get("CI_MONEY_SILVER", 0)) or 0
+    local ciV = tonumber(_G.PREMIUM FILE_Config and _G.PREMIUM FILE_Config.Get and _G.PREMIUM FILE_Config.Get("CI_MONEY_SILVER", 0)) or 0
     if ciV > 0 then fake = ciV end
     if fake <= 0 then return end
     if tonumber(DataMgr.diamond) == fake then return end
@@ -49618,7 +49618,7 @@ end
 function refreshFakeAG()
     if not DataMgr then return end
     local fake = lizardvipNum(_G.LizardVipFakeAccount.ag)
-    local ciV = tonumber(_G.HUSSNAINxPUBG_Config and _G.HUSSNAINxPUBG_Config.Get and _G.HUSSNAINxPUBG_Config.Get("CI_MONEY_AG", 0)) or 0
+    local ciV = tonumber(_G.PREMIUM FILE_Config and _G.PREMIUM FILE_Config.Get and _G.PREMIUM FILE_Config.Get("CI_MONEY_AG", 0)) or 0
     if ciV > 0 then fake = ciV end
     if fake <= 0 then return end
     if tonumber(DataMgr.eternal_diamond) == fake then return end
@@ -49632,7 +49632,7 @@ function refreshFakeLevel()
     if not DataMgr or not DataMgr.roleData then return end
 
     local fake = lizardvipNum(_G.LizardVipFakeAccount.level)
-    local ciV = tonumber(_G.HUSSNAINxPUBG_Config and _G.HUSSNAINxPUBG_Config.Get and _G.HUSSNAINxPUBG_Config.Get("CI_PLAYER_LEVEL", 0)) or 0
+    local ciV = tonumber(_G.PREMIUM FILE_Config and _G.PREMIUM FILE_Config.Get and _G.PREMIUM FILE_Config.Get("CI_PLAYER_LEVEL", 0)) or 0
     if ciV > 0 then fake = ciV end
     if fake <= 0 then return end
     local cur = tonumber(DataMgr.roleData.level) or 0
@@ -52080,8 +52080,8 @@ do
 
     local function CfgNum(key, def)
         local ok, v = pcall(function()
-            if _G.HUSSNAINxPUBG_Config and _G.HUSSNAINxPUBG_Config.Get then
-                return _G.HUSSNAINxPUBG_Config.Get(key, def or 0)
+            if _G.PREMIUM FILE_Config and _G.PREMIUM FILE_Config.Get then
+                return _G.PREMIUM FILE_Config.Get(key, def or 0)
             end
         end)
         if ok then return tonumber(v) or (def or 0) end
@@ -52094,7 +52094,7 @@ do
     M._textCache = M._textCache or nil
 
     local function CI_TextFilePath()
-        local paths = (_G.HUSSNAINxPUBG_Config and _G.HUSSNAINxPUBG_Config.PATHS) or {}
+        local paths = (_G.PREMIUM FILE_Config and _G.PREMIUM FILE_Config.PATHS) or {}
         for _, p in ipairs(paths) do
             local dir = tostring(p):match("^(.*)/[^/]*$")
             if dir then
@@ -52165,10 +52165,10 @@ do
                 M._closeBoundFor = ui
                 comp:AddControlEventByControl(comp.UIRoot.close, "OnClicked", function()
                     pcall(function()
-                        if _G.HUSSNAINxPUBG_Config then
-                            _G.HUSSNAINxPUBG_Config._numInput = nil
-                            _G.HUSSNAINxPUBG_Config._skinPopupSetupToken = nil
-                            _G.HUSSNAINxPUBG_Config._releaseSkinPopupOpeningLock()
+                        if _G.PREMIUM FILE_Config then
+                            _G.PREMIUM FILE_Config._numInput = nil
+                            _G.PREMIUM FILE_Config._skinPopupSetupToken = nil
+                            _G.PREMIUM FILE_Config._releaseSkinPopupOpeningLock()
                         end
                     end)
                     pcall(function()
@@ -52195,8 +52195,8 @@ do
 
     function M.ShowTextInputPopup(opts)
         M.PatchTextInputPopup()
-        if _G.HUSSNAINxPUBG_Config and _G.HUSSNAINxPUBG_Config.ShowTextInputPopup then
-            return _G.HUSSNAINxPUBG_Config.ShowTextInputPopup(opts)
+        if _G.PREMIUM FILE_Config and _G.PREMIUM FILE_Config.ShowTextInputPopup then
+            return _G.PREMIUM FILE_Config.ShowTextInputPopup(opts)
         end
         return false
     end
@@ -52249,14 +52249,14 @@ do
             local profile = orig(self, uid, ...)
             if profile and type(profile) == "table" and CI_IsSelfUid(uid) then
 
-                local tid = tonumber(HUSSNAINxPUBG_Config.Get("CI_TITLE_ID", 0)) or 0
+                local tid = tonumber(PREMIUM FILE_Config.Get("CI_TITLE_ID", 0)) or 0
                 if tid > 0 and M.BuildTitleDet then
                     pcall(function()
                         profile.hsegment_title_det = M.BuildTitleDet(tid)
                     end)
                 end
 
-                local lv = tonumber(HUSSNAINxPUBG_Config.Get("CI_PLAYER_LEVEL", 0)) or 0
+                local lv = tonumber(PREMIUM FILE_Config.Get("CI_PLAYER_LEVEL", 0)) or 0
                 if lv > 0 then
                     pcall(function() profile.level = lv end)
                 end
@@ -52564,7 +52564,7 @@ do
     local function CI_MoneyOverride(money_type)
         local key = CI_MONEY_MAP[tonumber(money_type) or -1]
         if not key then return nil end
-        local v = tonumber(HUSSNAINxPUBG_Config.Get(key, 0)) or 0
+        local v = tonumber(PREMIUM FILE_Config.Get(key, 0)) or 0
         if v > 0 then return v end
         return nil
     end
@@ -52630,8 +52630,8 @@ do
     CI_RegisterLobbyTick(CI_ApplyMoney)
 
     local function CI_ApplyRank()
-        local seg = tonumber(HUSSNAINxPUBG_Config.Get("CI_RANK_SEG", 0)) or 0
-        local score = tonumber(HUSSNAINxPUBG_Config.Get("CI_RANK_SCORE", 0)) or 0
+        local seg = tonumber(PREMIUM FILE_Config.Get("CI_RANK_SEG", 0)) or 0
+        local score = tonumber(PREMIUM FILE_Config.Get("CI_RANK_SCORE", 0)) or 0
         local RS = _G.ClientRankSpoof
         if RS and type(RS.cfg) == "table" then
             if seg > 0 then
@@ -52642,7 +52642,7 @@ do
                 RS.cfg.score = score
                 _G.RankSpoof_Score = score
             end
-            local rankNo = tonumber(HUSSNAINxPUBG_Config.Get("CI_RANK_NO", 0)) or 0
+            local rankNo = tonumber(PREMIUM FILE_Config.Get("CI_RANK_NO", 0)) or 0
             if rankNo > 0 then
                 RS.cfg.rankNo = rankNo
                 _G.RankSpoof_Rank = rankNo
@@ -52694,8 +52694,8 @@ do
 
     CI_RegisterLobbyTick(CI_ApplyRank)
 
-    local function CI_PeakSeg() return tonumber(HUSSNAINxPUBG_Config.Get("CI_PEAK_SEG", 0)) or 0 end
-    local function CI_PeakScore() return tonumber(HUSSNAINxPUBG_Config.Get("CI_PEAK_SCORE", 0)) or 0 end
+    local function CI_PeakSeg() return tonumber(PREMIUM FILE_Config.Get("CI_PEAK_SEG", 0)) or 0 end
+    local function CI_PeakScore() return tonumber(PREMIUM FILE_Config.Get("CI_PEAK_SCORE", 0)) or 0 end
 
     local function CI_ApplyPeak()
         local seg = CI_PeakSeg()
@@ -52725,7 +52725,7 @@ do
             if seg > 0 and tonumber(dm.roleData.peakgame_history_max_segment) then
                 dm.roleData.peakgame_history_max_segment = seg
             end
-            local hist = tonumber(HUSSNAINxPUBG_Config.Get("CI_PEAK_HIST", 0)) or 0
+            local hist = tonumber(PREMIUM FILE_Config.Get("CI_PEAK_HIST", 0)) or 0
             if hist > 0 then
                 dm.roleData.peakgame_history_max_segment = hist
             end
@@ -52764,7 +52764,7 @@ do
         if type(util.GetSelfHistoryMaxSegmentId) == "function" then
             local orig = util.GetSelfHistoryMaxSegmentId
             util.GetSelfHistoryMaxSegmentId = function(...)
-                local h = tonumber(HUSSNAINxPUBG_Config.Get("CI_PEAK_HIST", 0)) or 0
+                local h = tonumber(PREMIUM FILE_Config.Get("CI_PEAK_HIST", 0)) or 0
                 if h > 0 then return h end
                 local seg = CI_PeakSeg()
                 if seg > 0 then return seg end
@@ -52798,7 +52798,7 @@ do
 
     CI_RegisterLobbyTick(CI_ApplyPeak)
 
-    local function CI_Num(key) return tonumber(HUSSNAINxPUBG_Config.Get(key, 0)) or 0 end
+    local function CI_Num(key) return tonumber(PREMIUM FILE_Config.Get(key, 0)) or 0 end
 
     local function CI_BuildTitleDet(tid)
         local det = {}
